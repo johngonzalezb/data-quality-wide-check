@@ -1,1 +1,42 @@
+subject_dataset:
+  schema: "gld_maz_marketing_nielsen"
+  table: "mx_market_share_scantrack"
 
+
+quality_definitions:
+  
+   
+  - expectation_name: completeness
+    function_context:
+      columns: ["mkt_tag"] 
+  - expectation_name: completeness
+    function_context:
+      columns: ["prod_tag"] 
+  - expectation_name: completeness
+    function_context:
+      columns: ["market"]   
+  - expectation_name: completeness
+    function_context:
+      columns: ["mkt_display_order"]    
+  - expectation_name: completeness
+    function_context:
+      columns: ["period"]   
+  - expectation_name: completeness
+    function_context:
+      columns: ["company"]   
+  - expectation_name: completeness
+    function_context:
+      columns: ["brand"]               
+
+  - expectation_name: validity 
+    function_context:
+      columns: ["category"]
+      condition: "category =('CERVEZAS')"    
+  - expectation_name: validity 
+    function_context:
+      columns: ["returnable_flag"]
+      condition: "returnable_flag in ('NO RETORNABLE','RETORNABLE')"  
+  - expectation_name: validity 
+    function_context:
+      columns: ["units_case_presentation"]
+      condition: "units_case_presentation >= 1"
